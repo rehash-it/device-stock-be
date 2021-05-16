@@ -1,0 +1,29 @@
+{
+  "name": "device-stock",
+  "version": "1.0.0",
+  "description": "The project is to expose device stock crud api",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha",
+    "start": "node index.js",
+    "build-docs": "./node_modules/.bin/apidoc -i ./routes -o ./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://r_abdubler@bitbucket.org/r_abdubler/tourgallery_be.git"
+  },
+  "author": "tourgallery team",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/r_abdubler/tourgallery_be#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "mongoose": "^5.12.9"
+  },
+  "devDependencies": {
+    "apidoc": "^0.27.1",
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0",
+    "supertest": "^6.1.3"
+  }
+}
