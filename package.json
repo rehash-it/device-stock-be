@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://r_abdubler@bitbucket.org/r_abdubler/tourgallery_be.git"
+    "url": ""
   },
-  "author": "tourgallery team",
+  "author": "Rehana Abdulber",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/r_abdubler/tourgallery_be#readme",
+  "homepage": "",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",

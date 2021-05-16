@@ -18,10 +18,10 @@ exports.auth=async (req, res) => {
   }
 
   function validate(req) {
-    const schema = {
-      username: Joi.string().min(5).max(255).required().username(),
+    const schema = Joi.object({
+      username: Joi.string().min(5).max(255).required(),
       password: Joi.string().min(5).max(255).required()
-    };
-  
-    return Joi.validate(req, schema);
+    });
+    const validation = schema.validate(req);
+    return validation;
   }
