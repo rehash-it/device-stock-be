@@ -26,21 +26,26 @@ exports.createDevice = (req, res) => {
 };
 exports.checkDevice = async (req, res) => {
   let checkDevice = null;
-  const toBeCheckedDevice = await Device.findById(req.params.id)
+  const toBeCheckedDevice = await Device.findById(req.params.id);
   if (!toBeCheckedDevice) return res.status(400).send("Device not found");
 
   if (req.body.isCheckedOut) {
-    if (toBeCheckedDevice.isCheckedOut) return res.status(400).send("The Device has already been checked out");
+    if (toBeCheckedDevice.isCheckedOut)
+      return res.status(400).send("The Device has already been checked out");
 
     const checkedOutBy = await User.findById(req.user._id);
     if (!checkedOutBy) return res.status(400).send("Invalid User");
 
-    const alreadyCheckedOutBy = await Device.find({ lastCheckedOutBy:checkedOutBy });
-    if (alreadyCheckedOutBy) return res.status(400).send("You have already checked out another device");
+    const alreadyCheckedOutBy = await Device.find({
+      lastCheckedOutBy: checkedOutBy,
+    });
+    if (alreadyCheckedOutBy)
+      return res
+        .status(400)
+        .send("You have already checked out another device");
 
     const now = new Date().getHours();
     if (now >= 3 && now <= 17) {
-  
       checkDevice = {
         lastCheckedOutDate: Date.now(),
         lastCheckedOutBy: { _id: checkedOutBy._id, name: checkedOutBy.name },
@@ -72,8 +77,8 @@ exports.checkDevice = async (req, res) => {
 exports.deleteDevice = async function (req, res) {
   const device = await Device.findByIdAndRemove(req.params.id);
 
-  if (!device)
+  if (!device) {
     return res.status(404).send("The Device with the given ID was not found.");
-
+  }
   res.send(device);
 };

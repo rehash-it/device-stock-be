@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 const express = require('express');
 
 const app = express();
+var cors = require('cors');
+app.use(cors());
 require('./routes/index')(app);
+
 
 if (!keys.jwtPrivateKey) {
   console.error('FATAL ERROR: jwtPrivateKey is not defined.');

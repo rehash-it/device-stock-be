@@ -1,29 +1,16 @@
 # README #
 
 This README would normally document whatever steps are necessary to get your application up and running.
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-### What is this repository for? ###
+Installation:
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+`npm install`  
 
-### How do I get set up? ###
+To Start Server:
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+`npm start`  
 
-### Contribution guidelines ###
+To Visit App:
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+`localhost:9000`  
