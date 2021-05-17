@@ -39,7 +39,7 @@ exports.checkDevice = async (req, res) => {
     const alreadyCheckedOutBy = await Device.find({
       lastCheckedOutBy: checkedOutBy,
     });
-    if (alreadyCheckedOutBy)
+    if (alreadyCheckedOutBy.length > 0)
       return res
         .status(400)
         .send("You have already checked out another device");
