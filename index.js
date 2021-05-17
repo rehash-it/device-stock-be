@@ -13,7 +13,13 @@ if (!keys.jwtPrivateKey) {
 let dbUri = keys.dburl;
 const connect = (databaseUrl = dbUri) => {
   return mongoose
-      .connect(databaseUrl)
+      .connect(databaseUrl,
+        {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+          useCreateIndex: true,
+          useFindAndModify: false
+        })
       .then(() => console.log('Database connected'))
       .catch(err => console.error('Database connection failed', err));
 };
